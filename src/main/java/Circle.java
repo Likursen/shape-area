@@ -1,17 +1,18 @@
 public class Circle extends Shape {
 
-    static {
+    private final int radius;
+
+    public Circle() {
         System.out.println("Enter the radius for the circle");
-    }
-
-    private int radius;
-
-    public Circle(int radius) {
-        this.radius = radius;
+        this.radius = Utils.scanNumber();
     }
 
     @Override
     public void calculateAndPrintArea() {
-        System.out.println("Circle area " + Math.pow(Math.PI, 2) * radius);
+        System.out.println("Circle area " + getArea());
+    }
+
+    private double getArea() {
+        return Math.pow(radius, 2) * Math.PI;
     }
 }

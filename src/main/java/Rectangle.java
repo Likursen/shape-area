@@ -1,19 +1,20 @@
 public class Rectangle extends Shape {
 
-    static {
+    private final int firstSide;
+    private final int secondSide;
+
+    public Rectangle() {
         System.out.println("Enter the length and width for the rectangle");
-    }
-
-    private int firstSide;
-    private int secondSide;
-
-    public Rectangle(int firstSide, int secondSide) {
-        this.firstSide = firstSide;
-        this.secondSide = secondSide;
+        this.firstSide = Utils.scanNumber();
+        this.secondSide = Utils.scanNumber();
     }
 
     @Override
     public void calculateAndPrintArea() {
-        System.out.println("Rectangle area " + firstSide * secondSide);
+        System.out.println("Rectangle area " + getArea());
+    }
+
+    private int getArea() {
+        return firstSide * secondSide;
     }
 }
