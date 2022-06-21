@@ -1,4 +1,4 @@
-public interface Area {
+public interface AreaCalculatable {
 
     void calculateAndPrintArea();
 }
